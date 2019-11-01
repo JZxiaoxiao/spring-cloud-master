@@ -1,10 +1,10 @@
-package com.jun.eurekauser;
+package com.jun.eurekaribbon;
 
 
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaUserApplicationTests {
+class EurekaRibbonApplicationTests {
 
     void contextLoads() {
     }

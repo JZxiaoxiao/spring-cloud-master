@@ -1,6 +1,6 @@
-package com.jun.eurekauser.controller;
+package com.jun.eurekaribbon.controller;
 
-import com.jun.eurekauser.service.HelloService;
+import com.jun.eurekaribbon.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

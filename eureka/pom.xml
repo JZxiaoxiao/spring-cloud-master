@@ -22,7 +22,7 @@
     <modules>
         <module>eureka-provider</module>
         <module>eureka-server</module>
-        <module>eureka-user</module>
+        <module>eureka-ribbon</module>
         <module>eureka-feign</module>
     </modules>
 

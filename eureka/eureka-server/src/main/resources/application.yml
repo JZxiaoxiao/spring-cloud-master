@@ -12,7 +12,7 @@ eureka:
 
 spring:
   application:
-    name: eurka-server
+    name: eurka-ribbon
   #开启基础权限校验 配合spring-boot-starter-security使用
   security:
     basic:
