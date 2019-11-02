@@ -24,6 +24,7 @@
         <module>eureka-server</module>
         <module>eureka-ribbon</module>
         <module>eureka-feign</module>
+        <module>eureka-server-ha</module>
     </modules>
 
     <properties>

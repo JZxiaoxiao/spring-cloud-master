@@ -1,0 +1,39 @@
+#高可用 eureka
+spring:
+  application:
+    name: eurka-ha
+---
+server:
+  port: 8771
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8772/eureka/,http://peer3:8773/eureka/
+
+---
+server:
+  port: 8772
+spring:
+  profiles: peer2
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8771/eureka/,http://peer3:8773/eureka/
+
+---
+server:
+  port: 8773
+spring:
+  profiles: peer3
+eureka:
+  instance:
+    hostname: peer3
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8771/eureka/,http://peer2:8772/eureka/
