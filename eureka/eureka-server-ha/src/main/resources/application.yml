@@ -1,4 +1,4 @@
-#高可用 eureka
+#高可用 eureka,需要配置 hosts
 spring:
   application:
     name: eurka-ha
