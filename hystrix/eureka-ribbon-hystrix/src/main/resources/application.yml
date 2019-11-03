@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: service-ribbon
+    name: service-ribbon-hystrix
 
 eureka:
   client:

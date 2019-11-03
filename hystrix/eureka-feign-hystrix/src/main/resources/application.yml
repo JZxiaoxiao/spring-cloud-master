@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: service-feign
+    name: service-feign-hystrix
 
 eureka:
   client:
