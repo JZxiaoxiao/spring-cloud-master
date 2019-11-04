@@ -1,0 +1,18 @@
+server:
+  port: 8005
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: nacos-feign
+#  #开启基础权限校验 配合spring-boot-starter-security使用
+#  security:
+#    basic:
+#      enabled: true
+#    user:
+#      name: s
+#      password: 123
+
