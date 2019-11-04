@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 
-@FeignClient(value = "nacos-provider")
+@FeignClient(value = "nacos-provider",fallback = com.jun.nacosfeign.service.FeignClientImpl.class)
 public interface IFeignClient {
 
     @GetMapping(value = "/hi")

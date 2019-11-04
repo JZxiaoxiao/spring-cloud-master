@@ -8,6 +8,10 @@ spring:
         server-addr: 127.0.0.1:8848
   application:
     name: nacos-feign
+#支持Hystrix
+feign:
+  hystrix:
+    enabled: true
 #  #开启基础权限校验 配合spring-boot-starter-security使用
 #  security:
 #    basic:
