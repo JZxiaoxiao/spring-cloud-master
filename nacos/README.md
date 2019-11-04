@@ -3,3 +3,5 @@ nacos+ribbon
 
 nacos+feign
 
+nacos+feign(hystrix)
+
