@@ -1,0 +1,16 @@
+server:
+  port: 8663
+
+#http://localhost:8663/foo/dev 访问
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/forezp/SpringcloudConfig/
+          searchPaths: respo
+          username:
+          password:
+      label: master
