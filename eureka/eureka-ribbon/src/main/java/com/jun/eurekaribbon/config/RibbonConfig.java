@@ -10,12 +10,12 @@ import org.springframework.context.annotation.Configuration;
  * 第一种方式（不推荐）
  * 全局配置
  */
-@RibbonClient(configuration = RibbonConfig.DefaultRibbonConfig.class)
+//@RibbonClient(configuration = RibbonConfig.DefaultRibbonConfig.class)
 public class RibbonConfig {
 
-    @Configuration
+    //@Configuration
     class DefaultRibbonConfig {
-        @Bean
+        //@Bean
         public IRule ribbonRule() {
             return new RandomRule();
         }
