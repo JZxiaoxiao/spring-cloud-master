@@ -13,3 +13,7 @@ eureka:
     #更改Eureka实例ID
     prefer-ip-address: true
     instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+#第二种方式（推荐）
+ribbon:
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
