@@ -1,0 +1,98 @@
+server:
+  port: 8552
+spring:
+  profiles:
+    active: after_route #spring的启动文件为after-route文件
+
+#在application.yml再建一个配置文件，语法是三个横线
+
+##当请求的时间在这个配置的时间之后，请求会被路由到http://springboot.fun/
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: after_route #每个router都需要一个唯一的id
+          uri: http://springboot.fun/
+          predicates:
+            - After=2018-01-20T17:42:47.789-07:00[America/Denver]
+  profiles: after_route
+
+##当请求的Header中有X-Request-Id的header名，且header值为数字时，请求会被路由到配置的 uri.
+##例子：curl -H 'X-Request-Id:1' localhost:8552
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: header_route
+          uri: http://localhost:8763/hi
+          predicates:
+            - Header=X-Request-Id, \d+
+  profiles: header_route
+
+#请求带有cookie名为 name, cookie值为123 的请求将都会转发到uri
+#例子：curl -H 'Cookie:name=123' localhost:8552
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: cookie_route
+          uri: http://localhost:8763/hi
+          predicates:
+            - Cookie=name, 123
+  profiles: cookie_route
+
+#请求头中含有Host为fangzhipeng.com的请求将会被路由转发转发到配置的uri
+#例子：curl -H 'Host:www.spring.fun' localhost:8552
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: host_route
+          uri: http://localhost:8763/hi
+          predicates:
+            - Host=**.spring.fun
+  profiles: host_route
+
+#所有的GET类型的请求都会路由转发到配置的uri
+#例子：curl localhost:8552
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: method_route
+          uri: http://localhost:8763/hi
+          predicates:
+            - Method=GET
+  profiles: method_route
+
+#所有的请求路径满足/foo/{segment}的请求将会匹配并被路由，比如/foo/1 、/foo/bar的请求，将会命中匹配，并成功转发
+#例子:curl localhost:8552/foo/dew
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: path_route
+          uri: http://localhost:8763/hi
+          predicates:
+            - Path=/foo/{segment}
+  profiles: path_route
+
+#请求中含有参数foo，并且foo的值匹配ba.，则请求命中路由，
+#例子： curl localhost:8552?foo=bar
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: query_route
+          uri: http://localhost:8763/hi
+          predicates:
+            - Query=foo, ba.
+            #- Query=fex  #请求参数中含有参数名为fex 的参数将会被请求转发到uri
+  profiles: query_route

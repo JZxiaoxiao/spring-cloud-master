@@ -1,0 +1,29 @@
+server:
+  port: 8551
+
+spring:
+  application:
+    name: eureka-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #gateway开启服务注册和发现的功能,可以访问 localhost:8551/service-ribbon/hi?name=1323
+          lowerCaseServiceId: true #将请求路径上的服务名配置为小写
+      routes:
+        - id: service-ribbon
+          uri: lb://service-ribbon
+          predicates:
+            - Path=/demo/** #将以/demo/**开头的请求都会转发到uri为lb://service-ribbon的地址上(使用lb://ServiceName，当然也可以通过http://localhost:端口 指向)，可以访问localhost:8551/demo/hi?name=1323
+          filters:
+            - StripPrefix=1
+            #- RequestTime=true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://s:123@localhost:8761/eureka/
+  instance:
+    #更改Eureka实例ID
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
