@@ -44,7 +44,7 @@ spring:
             - Cookie=name, 123
   profiles: cookie_route
 
-#请求头中含有Host为fangzhipeng.com的请求将会被路由转发转发到配置的uri
+#请求头中含有Host为spring.fun的请求将会被路由转发转发到配置的uri
 #例子：curl -H 'Host:www.spring.fun' localhost:8552
 ---
 spring:
