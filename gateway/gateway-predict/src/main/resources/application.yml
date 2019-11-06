@@ -26,7 +26,7 @@ spring:
     gateway:
       routes:
         - id: header_route
-          uri: http://localhost:8763/hi
+          uri: http://httpbin.org:80/get
           predicates:
             - Header=X-Request-Id, \d+
   profiles: header_route
@@ -39,7 +39,7 @@ spring:
     gateway:
       routes:
         - id: cookie_route
-          uri: http://localhost:8763/hi
+          uri: http://httpbin.org:80/get
           predicates:
             - Cookie=name, 123
   profiles: cookie_route
@@ -52,7 +52,7 @@ spring:
     gateway:
       routes:
         - id: host_route
-          uri: http://localhost:8763/hi
+          uri: http://httpbin.org:80/get
           predicates:
             - Host=**.spring.fun
   profiles: host_route
@@ -65,7 +65,7 @@ spring:
     gateway:
       routes:
         - id: method_route
-          uri: http://localhost:8763/hi
+          uri: http://httpbin.org:80/get
           predicates:
             - Method=GET
   profiles: method_route
@@ -78,7 +78,7 @@ spring:
     gateway:
       routes:
         - id: path_route
-          uri: http://localhost:8763/hi
+          uri: http://httpbin.org:80/get
           predicates:
             - Path=/foo/{segment}
   profiles: path_route
@@ -91,7 +91,7 @@ spring:
     gateway:
       routes:
         - id: query_route
-          uri: http://localhost:8763/hi
+          uri: http://httpbin.org:80/get
           predicates:
             - Query=foo, ba.
             #- Query=fex  #请求参数中含有参数名为fex 的参数将会被请求转发到uri
