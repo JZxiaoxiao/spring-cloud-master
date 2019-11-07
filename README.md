@@ -1,5 +1,16 @@
 # spring-cloud-master
 ## spring-cloud 项目整合
+  
+  注册中心：
+  eureka 2.x 和 zuul ，Netflix官方没有提供开源，不建议使用。
+  而nacos 作为Alibaba 孵化成功的项目，已经兼容了eureka和cloud-config 的功能，并且提供更加方便和简洁的配置，优先推荐。
+  如果实在不想用nacos，也可以用zookeeper或者console，后续会更新对应项目配置。
+  网关策略：
+  gateway是spring-cloud官方团队孵化的项目，完全超越zuul，优先建议选择。
+  负载均衡策略：
+  ribbon+feign
+  
+  [spring-cloud 介绍](https://blog.csdn.net/forezp/article/details/83999882)
 ### [nacos](https://github.com/JZxiaoxiao/spring-cloud-master/tree/master/nacos)：cloud-Alibaba 注册中心与配置中心
   - 服务注册与发现
   - 配置中心支持
