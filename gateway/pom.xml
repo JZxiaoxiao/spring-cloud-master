@@ -23,6 +23,7 @@
         <module>eureka-gateway</module>
         <module>gateway-predict</module>
         <module>gateway-filter</module>
+        <module>gateway-limit</module>
     </modules>
 
     <properties>
