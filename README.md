@@ -6,7 +6,8 @@
   
     eureka 2.x 和 zuul ，Netflix官方没有提供开源，不建议使用。
     而nacos 作为Alibaba 孵化成功的项目，已经兼容了eureka和cloud-config 的功能，并且提供更加方便和简洁的配置。
-    如果不用nacos，也可以用zookeeper或者console，后续会更新对应项目配置。
+    如果不用nacos，也可以用zookeeper或者console，后续会更新对应项目配置。  
+    
   [eureka底层设计](https://blog.csdn.net/forezp/article/details/83999947)  
   [nacos官方文档](https://nacos.io/zh-cn/docs/what-is-nacos.html)  
   [nacos源码分析](http://www.iocoder.cn/Nacos/good-collection/?vip)  
