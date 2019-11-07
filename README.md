@@ -1,6 +1,6 @@
 # spring-cloud-master
 ## spring-cloud 项目整合  
-所有案例的的源码，都已调试验证。  
+所有案例的的源码，都已调试验证。如果有问题请邮箱联系我，谢谢。
 项目基于spring-boot版本：2.0.3.RELEASE，spring-cloud版本：Finchley.SR1，spring-cloud-alibaba版本：0.2.2.RELEASE
   
   - 注册中心：
