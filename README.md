@@ -1,5 +1,6 @@
 # spring-cloud-master
-## spring-cloud 项目整合（所有案例的的源码，基于spring-boot版本：2.0.3.RELEASE，spring-cloud 版本：Finchley.SR1）
+## spring-cloud 项目整合  
+所有案例的的源码，基于spring-boot版本：2.0.3.RELEASE，spring-cloud 版本：Finchley.SR1
   
   注册中心：
   
