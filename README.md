@@ -2,7 +2,7 @@
 ## spring-cloud 项目整合  
 所有案例的的源码，基于spring-boot版本：2.0.3.RELEASE，spring-cloud 版本：Finchley.SR1
   
-  注册中心：
+  - 注册中心：
   
     eureka 2.x 和 zuul ，Netflix官方没有提供开源，不建议使用。
     而nacos 作为Alibaba 孵化成功的项目，已经兼容了eureka和cloud-config 的功能，并且提供更加方便和简洁的配置。
@@ -11,13 +11,13 @@
   [nacos官方文档](https://nacos.io/zh-cn/docs/what-is-nacos.html)  
   [nacos源码分析](http://www.iocoder.cn/Nacos/good-collection/?vip)  
   
-  网关策略：
+  - 网关策略：
       
       gateway是Spring Cloud官方推出的第二代网关框架，取代Zuul网关。
-  负载均衡策略：
+  - 负载均衡策略：
       
       ribbon+feign实现
-  断路器策略：
+  - 断路器策略：
   
       hystrix实现
   
