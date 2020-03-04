@@ -34,4 +34,14 @@ public interface IFeignClient {
      */
     @PostMapping(value = "/testFile1",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     String testFile1(@RequestPart("file") MultipartFile file);
+
+    /**
+     * @Author JZxiaoxiao
+     * @Description 用于远程调用文件下载字节流，注意用@RequestPart
+     * @Date 2020/3/4 18:04
+     * @Param [file]
+     * @return java.lang.String
+     */
+    @PostMapping(value = "/testFile2",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    byte[] testFile2(@RequestPart("file") MultipartFile file);
 }

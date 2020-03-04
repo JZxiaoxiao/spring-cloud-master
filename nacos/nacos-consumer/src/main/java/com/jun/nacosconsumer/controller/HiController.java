@@ -54,4 +54,16 @@ public class HiController {
         return feignClient.testFile1(file);
     }
 
+    /**
+     * @Author JZxiaoxiao
+     * @Description 调用 nacos-feign 的文件下载服务，提供字节流：testFile2
+     * @Date 2020/3/4 17:58
+     * @Param [file]
+     * @return java.lang.String
+     */
+    @PostMapping(value = "/test5")
+    public byte[] testFile2(@RequestParam("file") MultipartFile file) {
+        byte[] data = feignClient.testFile2(file);
+        return data;
+    }
 }

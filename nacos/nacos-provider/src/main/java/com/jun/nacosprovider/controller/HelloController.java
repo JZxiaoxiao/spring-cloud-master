@@ -47,4 +47,15 @@ public class HelloController {
         System.out.println(file.getOriginalFilename());
         return "file:" + file.getOriginalFilename() + " ,i am from port:" + port;
     }
+
+    @PostMapping("/testFile2")
+    public byte[] testFile2(@RequestParam("file") MultipartFile file) {
+        System.out.println(file.getOriginalFilename());
+        try {
+            return file.getBytes();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
