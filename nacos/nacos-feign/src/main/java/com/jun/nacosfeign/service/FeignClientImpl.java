@@ -3,6 +3,7 @@ package com.jun.nacosfeign.service;
 import com.alibaba.fastjson.JSON;
 import com.jun.nacosfeign.entity.User;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Component
 public class FeignClientImpl implements IFeignClient{
@@ -19,5 +20,10 @@ public class FeignClientImpl implements IFeignClient{
     @Override
     public String sayJsonStringFromClient(String data) {
         return "sorry "+data;
+    }
+
+    @Override
+    public String testFile1(MultipartFile file) {
+        return "sorry "+file.getName();
     }
 }
