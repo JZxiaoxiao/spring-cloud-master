@@ -64,6 +64,7 @@ public class HelloController {
         System.out.println(file.getOriginalFilename());
         try {
             String data = new String(file.getBytes());
+            String lines[] = data.split("\r?\n");
             return data;
         } catch (IOException e) {
             e.printStackTrace();
