@@ -58,4 +58,16 @@ public class HelloController {
         }
         return null;
     }
+
+    @PostMapping("/testFile3")
+    public String testFile3(@RequestParam("file") MultipartFile file) {
+        System.out.println(file.getOriginalFilename());
+        try {
+            String data = new String(file.getBytes());
+            return data;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

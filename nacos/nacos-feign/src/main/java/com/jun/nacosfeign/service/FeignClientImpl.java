@@ -31,4 +31,9 @@ public class FeignClientImpl implements IFeignClient{
     public byte[] testFile2(MultipartFile file) {
         return new byte[0];
     }
+
+    @Override
+    public String testFile3(MultipartFile file) {
+        return "sorry ";
+    }
 }
